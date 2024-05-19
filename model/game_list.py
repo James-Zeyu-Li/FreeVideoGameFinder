@@ -2,6 +2,10 @@
 A class representing a list of games.
 """
 
+from model.game import Game
+from random import choice
+from model.utils.clean_data import clean_games_data
+
 
 class Gamelist:
     # def __init__(self, games=None)
