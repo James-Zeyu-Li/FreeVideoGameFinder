@@ -45,8 +45,35 @@ class GameList:
             )
             self.games.append(game)
 
-    # def select_random_game(self):
+    def select_random_game(self):
+        """
+        Select a random game from the list of games.
 
-    # def search_by_title(self):
+        Returns:
+            Game: Randomly selected Game.
+
+        Raises:
+            ValueError: If there are no games available to choose from.
+        """
+        if not self.games:
+            raise ValueError("No games available to choose from.")
+
+        return choice(self.games)
+
+    def search_by_title(self, title):
+        """
+        This function allows matched the title string with game title
+
+        Args:
+            title (str): The game title
+
+        Returns:
+            list: A list of Game matching the title.
+        """
+        matched_game = []
+        for game in self.games:
+            if title.lower() in game.title.lower():
+                matched_game.append(game)
+        return matched_game
 
     # def filter_by_genre(self):
