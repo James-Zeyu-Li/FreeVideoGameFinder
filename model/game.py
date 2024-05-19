@@ -26,3 +26,17 @@ class Game:
         self.release_date = release_date
         self.thumbs_up_count = 0
         self.has_thumbs_up = False
+
+    def __str__(self):
+        """
+        String representation of the game class
+
+        returns:
+            str A formatted string with game information.
+        """
+        return (f"Game Title: {self.title} "
+                f"Short_description: {self.short_description} "
+                f"Game game_url: {self.game_url} "
+                f"Game genre: {self.genre} "
+                f"Game publisher: {self.developer} "
+                f"Game release_date: {self.release_date}")
