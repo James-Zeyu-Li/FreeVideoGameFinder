@@ -40,6 +40,12 @@ Blizzard Entertainment.",
             self.assertEqual(response.status_code, 200)
             self.assertEqual(response.json()['title'], "Overwatch 2")
 
+    def test_fetch_games_list_with_http_error(self):
+        test_url = "https://www.freetogame.com/api/games?platform=pc123123"
+
+        with requests_mock.Mocker() as m:
+            m.get(test_url, status_code=404)
+            self.assertRaises(HTTPError)
 
 if __name__ == "__main__":
     unittest.main()
