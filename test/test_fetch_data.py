@@ -47,6 +47,21 @@ Blizzard Entertainment.",
             m.get(test_url, status_code=404)
             self.assertRaises(HTTPError)
 
+    def test_fetch_games_list_with_connection_error(self):
+        test_url = "https://www.freetogame.com/api/games?platform=pc1"
+
+        with requests_mock.Mocker() as m:
+            m.get(test_url, exc=ConnectionError)
+            self.assertRaises(ConnectionError)
+
+    def test_fetch_games_list_with_timeout_error(self):
+        test_url = "https://www.freetogame.com/api/games?platform=pc"
+
+        with requests_mock.Mocker() as m:
+            m.get(test_url, exc=Timeout)
+            self.assertRaises(Timeout)
+
+
 if __name__ == "__main__":
     unittest.main()
 
