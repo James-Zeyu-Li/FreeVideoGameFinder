@@ -5,6 +5,7 @@ A class representing a list of games.
 from model.game import Game
 from random import choice
 from model.utils.clean_data import clean_games_data
+from model.utils.filter_game import genre_filter_games
 
 
 class GameList:
@@ -76,4 +77,8 @@ class GameList:
                 matched_game.append(game)
         return matched_game
 
-    # def filter_by_genre(self):
+    def filter_game(self, genre):
+        """
+        Filter games by genre and sort by release date if specified.
+        """
+        return genre_filter_games(self.games, genre)
