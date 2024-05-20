@@ -18,7 +18,47 @@ class TestGame(unittest.TestCase):
 
         self.assertIsInstance(game, Game)
 
-    
+    def test_game_initialization_wrong_title_type(self):
+        with self.assertRaises(TypeError):
+            Game(1, "thumbnail.jpg", "Short description",
+                 "https://www.freetogame.com/api", "Genre",
+                 "Developer", "2022-10-04")
+
+    def test_game_initialization_wrong_thumbnail_type(self):  # need work
+        with self.assertRaises(TypeError):
+            Game("Title", 1, "Short description",
+                 "https://www.freetogame.com/api", "Genre",
+                 "Developer", "2022-10-04")
+
+    def test_game_initialization_wrong_description_type(self):
+        with self.assertRaises(TypeError):
+            Game("Title", "thumbnail.jpg", 1,
+                 "https://www.freetogame.com/api", "Genre",
+                 "Developer", "2022-10-04")
+
+    def test_game_initialization_wrong_game_url_type(self):
+        with self.assertRaises(TypeError):
+            Game("Title", "thumbnail.jpg", "Short description",
+                 1, "Genre",
+                 "Developer", "2022-10-04")
+
+    def test_game_initialization_wrong_genre_type(self):
+        with self.assertRaises(TypeError):
+            Game("Title", "thumbnail.jpg", "Short description",
+                 "https://www.freetogame.com/api", 1,
+                 "Developer", "2022-10-04")
+
+    def test_game_initialization_wrong_developer_type(self):
+        with self.assertRaises(TypeError):
+            Game("Title", "thumbnail.jpg", "Short description",
+                 "https://www.freetogame.com/api", "Genre",
+                 1, "2022-10-04")
+
+    def test_game_initialization_wrong_date_type(self):
+        with self.assertRaises(TypeError):
+            Game("Title", "thumbnail.jpg", "Short description",
+                 "https://www.freetogame.com/api", "Genre",
+                 "Developer", 1)
 
 
 # python3 -m unittest test.test_game
