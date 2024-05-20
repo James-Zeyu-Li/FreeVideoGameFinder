@@ -16,6 +16,20 @@ class Game:
         """
         Initializes the class Game
         """
+        if not isinstance(title, str):
+            raise TypeError("Game title must be a string")
+        if not isinstance(thumbnail, str):
+            raise TypeError("Thumbnail must be a string")
+        if not isinstance(short_description, str):
+            raise TypeError("Game description must be a string")
+        if not isinstance(game_url, str):
+            raise TypeError("Game Url must be a string")
+        if not isinstance(genre, str):
+            raise TypeError("Game genre must be a string")
+        if not isinstance(developer, str):
+            raise TypeError("Game developer must be a string")
+        if not isinstance(release_date, str):
+            raise TypeError("Game release_date must be a string")
 
         self.title = title
         self.thumbnail = thumbnail
