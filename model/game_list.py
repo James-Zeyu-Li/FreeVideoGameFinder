@@ -81,4 +81,11 @@ class GameList:
         """
         Filter games by genre and sort by release date if specified.
         """
-        return genre_filter_games(self.games, genre)
+        if not isinstance(genre, str):
+            raise TypeError("Genre must be a string")
+
+        matched_game = []
+        for game in self.games:
+            if genre.lower() in game.genre.lower():
+                matched_game.append(game)
+        return matched_game
