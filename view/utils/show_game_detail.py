@@ -1,6 +1,4 @@
 """
-Zeyu Li, CS5001, Final Project
-
 The files showns the layout of game detail.
 """
 

@@ -1,7 +1,7 @@
 import streamlit as st
-from view.home import home_rendering
-from view.search import search_rendering
-from view.all_games import all_game_rendering
+from view.home import Homepage
+from view.search import SearchPage
+from view.all_games import AllGamesPage
 
 
 def main():
@@ -12,11 +12,11 @@ def main():
     page = st.sidebar.radio("Go to", ["Home", "search", "All games"])
 
     if page == "Home":
-        home_rendering()
+        Homepage().home_rendering()
     elif page == "search":
-        search_rendering()
+        SearchPage().search_rendering()
     elif page == "All games":
-        all_game_rendering()
+        AllGamesPage().all_game_rendering()
 
 
 if __name__ == "__main__":
