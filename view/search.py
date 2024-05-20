@@ -38,3 +38,6 @@ def search_rendering():
     search_page_title()
     search_page_buttons()
     input_box()
+
+
+
