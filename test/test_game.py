@@ -60,5 +60,20 @@ class TestGame(unittest.TestCase):
                  "https://www.freetogame.com/api", "Genre",
                  "Developer", 1)
 
+    def test_turn_game_to_str(self):
+        game = Game("Title", "thumbnail.jpg", "Short description",
+                    "https://www.freetogame.com/api", "Genre",
+                    "Developer", "2022-10-04")
+        expected_game = ("Game Title: Title "
+                         "Short_description: Short description "
+                         "Game game_url: https://www.freetogame.com/api "
+                         "Game genre: Genre "
+                         "Game publisher: Developer "
+                         "Game release_date: 2022-10-04")
+        self.assertEqual(str(game), expected_game)
 
-# python3 -m unittest test.test_game
+
+if __name__ == "__main__":
+    unittest.main()
+
+# python3 -m unittest test.test_game.py
