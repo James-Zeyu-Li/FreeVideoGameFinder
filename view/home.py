@@ -4,6 +4,7 @@ Home page
 
 import streamlit as st
 from view.utils.widget import button_widget, divider
+from view.utils.show_game_detail import show_game_detail
 
 
 def show_home_title():
@@ -29,3 +30,13 @@ def home_rendering():
     show_home_title()
     show_random_button()
     st.write("Click to explore a game!")
+
+
+def show_random_game_with_detail(random_game):
+    """
+    Displays the details of a random game.
+    """
+    if random_game:
+        show_game_detail(random_game)
+    else:
+        st.write("No game selected or game not found.")

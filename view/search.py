@@ -4,6 +4,7 @@ Search page
 
 import streamlit as st
 from view.utils.widget import button_widget, input_box_widget, divider
+from view.utils.show_game_detail import show_game_detail
 
 
 def search_page_title():
@@ -38,6 +39,3 @@ def search_rendering():
     search_page_title()
     search_page_buttons()
     input_box()
-
-
-
