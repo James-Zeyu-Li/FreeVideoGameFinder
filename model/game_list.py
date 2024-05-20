@@ -5,7 +5,7 @@ A class representing a list of games.
 from model.game import Game
 from random import choice
 from model.utils.clean_data import clean_games_data
-from model.utils.filter_game import genre_filter_games
+# from model.utils.filter_game import genre_filter_games
 
 
 class GameList:
@@ -30,10 +30,21 @@ class GameList:
         self.games = games if games is not None else []
 
     def load_data(self, data):
+        """
+        Load game data into the GameList.
+
+        Args:
+            data (list): A list of dictionaries containing game data.
+
+        Raises:
+            TypeError: If 'data' is not a list.
+        """
         if not isinstance(data, list):
             raise TypeError("The data is not a list.")
 
         cleaned_data = clean_games_data(data)
+        print("Cleaned Data:", cleaned_data)  # Debug print statement
+
         for game_data in cleaned_data:
             game = Game(
                 game_data["title"],
@@ -45,6 +56,7 @@ class GameList:
                 game_data["release_date"]
             )
             self.games.append(game)
+        print("Loaded Games:", self.games)  # Debug print statement
 
     def select_random_game(self):
         """
@@ -80,6 +92,15 @@ class GameList:
     def filter_game(self, genre):
         """
         Filter games by genre and sort by release date if specified.
+
+        Args:
+            genre (str): The genre to filter by.
+
+        Returns:
+            list: A list of Game objects matching the genre.
+
+        Raises:
+            TypeError: If 'genre' is not a string.
         """
         if not isinstance(genre, str):
             raise TypeError("Genre must be a string")

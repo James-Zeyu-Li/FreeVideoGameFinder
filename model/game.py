@@ -38,8 +38,8 @@ class Game:
         self.genre = genre
         self.developer = developer
         self.release_date = release_date
-        self.thumbs_up_count = 0
-        self.has_thumbs_up = False
+        # self.thumbs_up_count = 0
+        # self.has_thumbs_up = False
 
     def __str__(self):
         """
