@@ -31,8 +31,7 @@ class SearchController:
         # search_page_buttons() clicked, set the result at
         #   current session state.
         if self.search_page_view.search_page_buttons():
-            st.session_state['search_results'] = \
-                self.search_games_by_title(
+            st.session_state['search_results'] = self.search_games_by_title(
                 st.session_state['search_query'])
 
         self.search_page_view.display_search_result()

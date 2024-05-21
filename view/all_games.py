@@ -25,7 +25,7 @@ class AllGamesPage:
         sort_order = st.sidebar.radio(
             "Sort By Time", ['Recommendation', 'Latest to Oldest', 'Oldest to Latest'])
 
-        if sort_order == 'Default':
+        if sort_order == 'Recommendation':
             sort_order = None
 
         genre = st.sidebar.selectbox(
