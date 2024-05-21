@@ -1,11 +1,13 @@
 import streamlit as st
 from controller.home_controller import HomepageController
 from controller.search_controller import SearchController
+from controller.all_games_controller import AllGamesController
 
 FREE_GAME_PC_URL = "https://www.freetogame.com/api/games?platform=pc"
 
 home_page_controller = HomepageController(FREE_GAME_PC_URL)
 search_page_controller = SearchController(FREE_GAME_PC_URL)
+all_games_page_controller = AllGamesController(FREE_GAME_PC_URL)
 
 
 def main():
@@ -29,6 +31,8 @@ def main():
         home_page_controller.home_rendering()
     elif st.session_state['page'] == 'search':
         search_page_controller.search_rendering()
+    elif st.session_state['page'] == 'all_games':
+        all_games_page_controller.all_games_rendering()
 
 
 if __name__ == "__main__":

@@ -1,5 +1,6 @@
 import streamlit as st
 from view.utils.widget import divider
+from view.utils.show_game_detail import show_game_detail
 
 
 class AllGamesPage:
@@ -22,9 +23,9 @@ class AllGamesPage:
             "Here's more detailed information or additional controls.")
 
         sort_order = st.sidebar.radio(
-            "Sort By Time", ['Defult', 'Latest to Oldest', 'Oldest to Latest'])
+            "Sort By Time", ['Default', 'Latest to Oldest', 'Oldest to Latest'])
 
-        if sort_order == 'Defult':
+        if sort_order == 'Default':
             sort_order = None
 
         genre = st.sidebar.selectbox(
@@ -34,9 +35,8 @@ class AllGamesPage:
 
         return genre, sort_order
 
-    def all_game_rendering(self):
+    def show_game_detail(self, game):
         """
-        Render the search page
+        Display the details of a single game.
         """
-        self.title_for_all_game()
-        self.filter_display_on_sidebar()
+        show_game_detail(game)

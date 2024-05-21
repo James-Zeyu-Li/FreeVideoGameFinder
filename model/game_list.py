@@ -6,7 +6,7 @@ from model.game import Game
 from random import choice
 from model.utils.clean_data import clean_games_data
 from model.utils.fetch_data import fetch_games_list
-# from model.utils.filter_game import genre_filter_games
+from model.utils.filter_game import filter_games
 
 
 class GameList:
@@ -88,27 +88,19 @@ class GameList:
                 matched_game.append(game)
         return matched_game
 
-    def filter_game(self, genre):
+    def filter_games(self, genre, sort_order=None):
         """
         Filter games by genre and sort by release date if specified.
 
         Args:
             genre (str): The genre to filter by.
+            sort_order (str, optional): The order to sort the games by
+                release date. Defaults to None.
 
         Returns:
-            list: A list of Game objects matching the genre.
-
-        Raises:
-            TypeError: If 'genre' is not a string.
+            list: A list of Game objects after filtering and sorting.
         """
-        if not isinstance(genre, str):
-            raise TypeError("Genre must be a string")
-
-        matched_game = []
-        for game in self.games:
-            if genre.lower() in game.genre.lower():
-                matched_game.append(game)
-        return matched_game
+        return filter_games(self.games, genre, sort_order)
 
     @staticmethod
     def load_model(url):
