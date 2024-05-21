@@ -47,5 +47,4 @@ class SearchController:
         Returns:
         list: List of games that match the title.
         """
-        found_games = self.game_list.search_by_title(title)
-        return found_games
+        return self.game_list.search_by_title(title)

@@ -23,7 +23,7 @@ class AllGamesPage:
             "Here's more detailed information or additional controls.")
 
         sort_order = st.sidebar.radio(
-            "Sort By Time", ['Default', 'Latest to Oldest', 'Oldest to Latest'])
+            "Sort By Time", ['Recommendation', 'Latest to Oldest', 'Oldest to Latest'])
 
         if sort_order == 'Default':
             sort_order = None

@@ -19,16 +19,14 @@ class SearchPage:
         """
         Creates and displays a button for initiating a game search.
         """
-        show_data_button = button_widget('Search Game Title')
-        return show_data_button
+        return button_widget('Search Game Title')
 
     def input_box(self):
         """
         Creates and displays an input box widget.
         """
-        search_box = input_box_widget(
+        return input_box_widget(
             "Enter Game Title", st.session_state.get('search_query', ''))
-        return search_box
 
     def display_search_result(self):
         """
