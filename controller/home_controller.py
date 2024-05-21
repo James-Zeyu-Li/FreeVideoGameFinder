@@ -10,23 +10,24 @@ from view.home import Homepage
 class HomepageController:
     def __init__(self, url):
         self.game_list = GameList.load_model(url)
+        self.homepage_view = Homepage()
 
     def home_rendering(self):
         """
         Render the home page of the Streamlit app.
         """
-        Homepage().show_home_title()
+        self.homepage_view.show_home_title()
 
         # Make a random_game key in session state, to save returned random game
         if 'random_game' not in st.session_state:
             st.session_state.random_game = None
 
         # if random button clicked, find random game is saved in session state.
-        if Homepage().show_random_button():
-            st.session_state.random_game = Homepage().find_random_game()
+        if self.homepage_view.show_random_button():
+            st.session_state.random_game = self.find_random_game()
 
         if st.session_state.random_game:
-            Homepage().show_random_game_with_detail(
+            self.homepage_view.show_random_game_with_detail(
                 st.session_state.random_game)
         else:
             st.write("Click to explore a game!")

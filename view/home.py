@@ -22,14 +22,6 @@ class Homepage:
         """
         return button_widget('Show Random Game')
 
-    def home_rendering(self):
-        """
-        Render the home page of the Streamlit app.
-        """
-        self.show_home_title()
-        self.show_random_button()
-        st.write("Click to explore a game!")
-
     def show_random_game_with_detail(self, random_game):
         """
         Displays the details of a random game.
