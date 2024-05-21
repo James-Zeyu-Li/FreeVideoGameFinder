@@ -118,7 +118,7 @@ class GameList:
 
         Returns:
             GameList: An instance of the GameList class
-                    loaded using the 'load_data' method of the 'GameList' class.
+                    loaded using the 'load_data' method of the 'GameList'.
         """
         game_data = fetch_games_list(url)
         game_list = GameList()
