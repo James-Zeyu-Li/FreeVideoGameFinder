@@ -5,6 +5,7 @@ A class representing a list of games.
 from model.game import Game
 from random import choice
 from model.utils.clean_data import clean_games_data
+from model.utils.fetch_data import fetch_games_list
 # from model.utils.filter_game import genre_filter_games
 
 
@@ -43,7 +44,6 @@ class GameList:
             raise TypeError("The data is not a list.")
 
         cleaned_data = clean_games_data(data)
-        print("Cleaned Data:", cleaned_data)  # Debug print statement
 
         for game_data in cleaned_data:
             game = Game(
@@ -56,7 +56,6 @@ class GameList:
                 game_data["release_date"]
             )
             self.games.append(game)
-        print("Loaded Games:", self.games)  # Debug print statement
 
     def select_random_game(self):
         """
@@ -110,3 +109,18 @@ class GameList:
             if genre.lower() in game.genre.lower():
                 matched_game.append(game)
         return matched_game
+
+    @staticmethod
+    def load_model(url):
+        """
+        Fetches a list of free PC games from the 'FREE_GAME_PC_URL'
+        Initializes 'GameList' object and load using method in GameList class.
+
+        Returns:
+            GameList: An instance of the GameList class
+                    loaded using the 'load_data' method of the 'GameList' class.
+        """
+        game_data = fetch_games_list(url)
+        game_list = GameList()
+        game_list.load_data(game_data)
+        return game_list

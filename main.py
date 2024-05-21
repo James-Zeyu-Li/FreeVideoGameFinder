@@ -3,6 +3,8 @@ from view.home import Homepage
 from view.search import SearchPage
 from view.all_games import AllGamesPage
 
+FREE_GAME_PC_URL = "https://www.freetogame.com/api/games?platform=pc"
+
 
 def main():
     """
