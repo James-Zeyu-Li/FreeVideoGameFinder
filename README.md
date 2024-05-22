@@ -73,44 +73,37 @@ streamlit run free_game_app.py
 
 ## Page interaction description:
 
-There are 3 pages for the application, including the Home page, the Search Game page, and the Explore All Games page.
-
-- A sidebar is shown on all pages to allow users to navigate the three available pages.
 ### Home Page:
+- **Welcome Message**: greets the user.
 
-- This page is a welcome page. The page contains a welcome message which greets the user.
+- **Random Game Selection**: A button selects and displays a random game when clicked.
 
-	**Features**:
-	
-	- Random Game Selection: The main page also features a button that, when clicked, selects and displays a random game.
-	
-	- Displaying Game Details: This feature is designed to engage users in discovering free
-	
-	- Another random game: If the user wants another random game, click the button again, and another game will be shown.
+- **Displaying Game Details**:Engage users in discovering free
+
+- **Another random game**: Allow user todo multiple clicks to display different random games.
+  
 
 ### Search Game page:
 
-- This page lets users input and search for games by game title through the input box.
 
-	**Feature:**
-	
-	- User input: A text box that allows users to input any word or letters they want to search for games with the title containing the input.
-	
-	- Game Title Search: After the button is clicked, any game with the corresponding word or letter will show up with the game details.
-	
-	- Search result display: Matching games are listed with their details. If nothing is entered, all games will be shown. An error message is displayed if no matches are found, guiding the user accordingly.
+- **User input**: A text box to search games with the title.
+
+- **Game Title Search**: Display the game details according to the input.
+
+- **Search result display**: Lists matching games with details, shows all games if no input, and displays an error if no matches are found.
+  
 
 ### Explore All Games page:
 
-- Users can view a list of all available games, providing an overview of all game options.
+  
+**Feature:**
 
-	**Feature:**
-	
-	- Display all games: All the games are laid out for users to browse.
-	
-	- Sort by time: The user can sort all games based on release dates.
-	
-	- Filter by genre: Users can filter games by genre. Those two customizations allow users to find games that align with their interests.
+- Display all games: All the games are laid out for users to browse.
+
+- Sort by time: Allows user to sort all games based on release dates.
+
+- Filter by genre: Enables filtering games by genre, helping users find games that match their interests.
+
 
 
 ## Next steps:
