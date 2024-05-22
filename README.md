@@ -37,9 +37,9 @@ This Streamlit application is the front-end for users to access and explore  var
 
 ####  Through URL
 - Access the application through the following URL:
-```sh
-https://freegamefinder.streamlit.app/
-```
+
+Streamlit URL: https://freegamefinder.streamlit.app/
+
 
 #### Through Terminal
 - After setting up the enviroment 
