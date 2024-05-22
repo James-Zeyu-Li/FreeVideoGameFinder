@@ -16,7 +16,6 @@ Targeted primarily at gamers seeking cost-free gaming options, this application 
   
 Overall, this application is not just a gateway to free games but also an intuitive tool that caters to the diverse preferences of gaming aficionados, ensuring they find exactly what they're looking for with ease and convenience.
 
----
 
 ## Environment Setup
 
@@ -34,7 +33,6 @@ Streamlit: pip3 install streamlit
 
 This Streamlit application is the front-end for users to access and explore  various free-to-play PC games. It allows users to randomly discover games, search for games by title, and browse a list of games with options to filter and sort.
 
----
 ## Run the app
 
 ####  Through URL
@@ -64,8 +62,6 @@ streamlit run free_game_app.py
 
 ```
 
----
-
 ## API Used
 
 ### API description: Free-To-Play Games Database API
@@ -74,8 +70,6 @@ streamlit run free_game_app.py
 
 - API with endpoint: https://www.freetogame.com/api/games?platform=pc
 
-
----
 
 ## Page interaction description:
 
@@ -118,7 +112,6 @@ There are 3 pages for the application, including the Home page, the Search Game 
 	
 	- Filter by genre: Users can filter games by genre. Those two customizations allow users to find games that align with their interests.
 
----
 
 ## Next steps:
 
