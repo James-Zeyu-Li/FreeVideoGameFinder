@@ -38,7 +38,7 @@ This Streamlit application is the front-end for users to access and explore  var
 ####  Through URL
 - Access the application through the following URL:
 ```sh
-https://freevideogamefinder.streamlit.app/
+https://freegamefinder.streamlit.app/
 ```
 
 #### Through Terminal
@@ -104,7 +104,42 @@ streamlit run free_game_app.py
 
 - Filter by genre: Enables filtering games by genre, helping users find games that match their interests.
 
+## Project Structure
+```sh
+FreeVideoGameFiner/
+│
+├── free_game_app.py                # Main entry point for the Streamlit app
+├── requirements.txt                # Project dependencies
+├── README.md                       # Project documentation
+├── .gitignore                      # Folders avoided from pushed to git
+│
+├── controller/                     # Controllers to handle the logic
+│   ├── __init__.py          		# Initiate
+│   ├── home_controller.py          # Controller for Home page
+│   ├── search_controller.py        # Controller for Search page
+│   └── all_games_controller.py     # Controller for All Games page
+│
+├── model/                          # Models representing the data structures
+│   ├── __init__.py          		# Initiate
+│   ├── game.py                     # Game model
+│   ├── game_list.py                # GameList model
+│   └── utils/
+│   	├── __init__.py          	# Initiate
+│       ├── clean_data.py           # Helper functions to clean data
+│       ├── fetch_data.py           # Helper functions to fetch data
+│       └── filter_game.py          # Helper functions to filter games
+│
+├── view/                           # Views representing the UI components
+│   ├── __init__.py          		# Initiate
+│   ├── home.py                     # Home page view
+│   ├── search.py                   # Search page view
+│   ├── all_games.py                # All Games page view
+│   └── utils/
+│   	├── __init__.py          	# Initiate
+│       ├── widget.py               # Reusable UI widgets
+│       └── show_game_detail.py     # Function to display game details
 
+```
 
 ## Next steps:
 
