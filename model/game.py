@@ -3,6 +3,7 @@ The gam class will be providing game information.
 which helps on different search function and allow users to
 enter different infos to find a games or games.
 """
+from model import user
 
 
 class Game:
@@ -39,7 +40,21 @@ class Game:
         self.developer = developer
         self.release_date = release_date
         self.thumbs_up_count = 0
-        self.has_thumbs_up = False
+        self.thumb_up_users = set()
+
+    def thumbs_up(self):
+        """
+        Thumbs up can be performed by logged in user.
+        If the user has not thumbs up a game, add 1 to counter
+        If the user has given a thums up, it will be removed
+        """
+        if user.username not in self.thumbs_up_count:
+            self.thumb_up_users.add(user.username)
+            self.thumbs_up_count += 1
+        else:
+            self.thumbs_up_users.remove(user.username)
+            self.thumbs_up_count -= 1
+
 
     def __str__(self):
         """

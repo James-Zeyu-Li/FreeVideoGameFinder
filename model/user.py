@@ -7,6 +7,7 @@ class User:
 
         self.username = username
         self.password = password
+        self.logged_in = False
         self.liked_games = set()
 
     @staticmethod
