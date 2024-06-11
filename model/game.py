@@ -55,7 +55,6 @@ class Game:
             self.thumbs_up_users.remove(user.username)
             self.thumbs_up_count -= 1
 
-
     def __str__(self):
         """
         String representation of the game class
