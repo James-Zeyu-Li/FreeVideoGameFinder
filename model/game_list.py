@@ -116,3 +116,13 @@ class GameList:
         game_list = GameList()
         game_list.load_data(game_data)
         return game_list
+
+    def filter_favorite(self, favorite_games):
+
+        filtered_favorite_game = []
+
+        for game in self.games:
+            if game.title in favorite_games:
+                filtered_favorite_game.append(game)
+
+        return filtered_favorite_game
