@@ -52,7 +52,7 @@ class User:
 
     def is_favorite(self, username):
         """
-        Check if a game is in user's favorite. 
+        Check if a game is in user's favorite.
         """
         return username in self.favorite_games
 
